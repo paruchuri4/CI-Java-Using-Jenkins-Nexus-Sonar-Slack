@@ -290,7 +290,7 @@ Build Timestamp
 - We need to SSH our nexus server and check system status for nexus.
 ```sh
 sudo -i
-system status nexus
+systemctl status nexus
 ```
 
 - Go to browser, `http://<public_ip_of_nexus_server>:8081` ,click sign-in. Initial password will be located `/opt/nexus/sonatype-work/nexus3/admin.password`
