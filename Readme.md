@@ -491,7 +491,7 @@ stage('Test') {
 
 ### Step-8: Code Analysis with SonarQube
 
-- The Unit test/Code Coverage reports are generated under Jenkins workspace target directory. But these reports are not human readable. We need a tool which can scan and analyze the coed and present it in human readable format in a Dashboard. We will use SonarQube solution of this problem. 
+- The Unit test/Code Coverage reports are generated under Jenkins workspace target directory. But these reports are not human readable. We need a tool which can scan and analyze the code and present it in human readable format in a Dashboard. We will use SonarQube solution of this problem. 
 Two things need to setup:
  * SonarScanner tool in Jenkins to scan the code
  * We need SonarQube information in jenkins so that Jenkins will know where to upload these reports
@@ -613,7 +613,7 @@ stage('UPLOAD ARTIFACT') {
         }
 ```
 
-- Build is successful.
+- Pipeline is successful.
   
 ![](images/Pipeline-successful.png)
 
@@ -628,7 +628,6 @@ stage('UPLOAD ARTIFACT') {
 
 - Next we need to Add jenkins app to slack. Search in Google with `Slack apps`. Then search for `jenkins` add to Slack. We will choose the channel `jenkins-cicd`. It will give us to setup instructions, from there copy `Integration token credential ID` .
 
-![](images/slack.png)
 
 - We will go to Jenkins dashboard `Configure system` -> `Slack`
 ```sh
@@ -644,8 +643,6 @@ name: slacktoken
 description: slacktoken
 ```
 
-![](images/slack-connection-successful.png)
-
 - We will add below part to our Jenkinsfile in the same level with stages and push our changes.
 ```sh
 post{
@@ -657,6 +654,6 @@ post{
         }
     }
 ```
--  Voila! We get our Notification from slack.
+-  Finally! We get our Notification from slack.
 
-![](images/slack-notifications.png)
+![](images/slack.png)
